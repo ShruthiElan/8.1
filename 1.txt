@@ -1,0 +1,2 @@
+B = group A by name;
+C = foreach B GENERATE group,SUM(A.out);

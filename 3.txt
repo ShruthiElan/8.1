@@ -1,0 +1,7 @@
+
+B = group A (ID, year);
+C = foreach B GENERATE A.ID as id, A.year as year, SUM(A.in) as cons;
+D = order  C by cons DESC;
+E = foreach D GENERATE id,year;
+E = foreach D GENERATE flatten(id), flatten(year);
+F = limit E 10

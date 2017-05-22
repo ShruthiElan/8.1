@@ -1,0 +1,7 @@
+B = group A by year;
+C = foreach B {
+temp = foreach A GENERATE in-out;
+generate A.name as name, A.year as year, sum(temp) as sale;};
+D = order C by sale DESC;
+E = foreach C generate flatten(name);
+F = limit E 1;

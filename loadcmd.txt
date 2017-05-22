@@ -1,0 +1,3 @@
+
+A = load ‘/home/acadgild/Desktop/dataset.txt’ USING PigStorage(‘,’) AS (ID:chararray, name:chararray, buy:chararray, 
+    sell:chararray, in:int ,year:int);

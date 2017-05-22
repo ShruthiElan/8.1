@@ -1,0 +1,3 @@
+C = foreach B GENERATE group,SUM(A.out) as sum;
+D = order C by sum DESC;
+E =limit D 10;
